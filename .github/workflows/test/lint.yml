@@ -2,7 +2,7 @@ name: test/lint
 on: push
 jobs:
   lint:
-    runs-on: ubtunu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Git code download
         uses: actions/checkout@v4
@@ -14,7 +14,7 @@ jobs:
         run: npm lint
 
   test:
-    runs-on: ubtunu-latest
+    runs-on: ubuntu-latest
     needs: lint
     steps:
       - name: Git code download
@@ -27,7 +27,7 @@ jobs:
         run: npm test
 
     build:
-      runs-on: ubtunu-latest
+      runs-on: ubuntu-latest
       needs: [lint,test]
       steps:
         - name: Git code download
