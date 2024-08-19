@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git code download
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: installing dependcies
         run: npm install
@@ -18,7 +18,7 @@ jobs:
     needs: lint
     steps:
       - name: Git code download
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: installing dependcies
         run: npm install
@@ -31,7 +31,7 @@ jobs:
       needs: [lint,test]
       steps:
         - name: Git code download
-          uses: actions/checkout@v4
+          uses: actions/checkout@v3
 
         - name: installing dependcies
           run: npm install
