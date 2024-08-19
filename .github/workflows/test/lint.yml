@@ -1,0 +1,46 @@
+name: test/lint
+on: push
+jobs:
+    lint:
+        runs-on: ubtunu-latest
+        steps:
+            - name: Git code download
+              uses: actions/checkout@v4
+
+            - name: installing dependcies
+              run: npm install
+
+            - name: lint 
+              run: npm lint
+
+            - name: 
+
+    test:
+        runs-on: ubtunu-latest
+        needs: lint
+        steps:
+            - name: Git code download
+              uses: actions/checkout@v4
+
+            - name: installing dependcies
+              run: npm install
+
+            - name: test  
+              run: npm test
+
+    build:
+        runs-on: ubtunu-latest
+        needs: [lint,test]
+        steps:
+            - name: Git code download
+              uses: actions/checkout@v4
+
+            - name: installing dependcies
+              run: npm install
+
+            - name: build  
+              run: npm build
+            
+            - name: deploying status
+              run: echo "Deploying application"
+
